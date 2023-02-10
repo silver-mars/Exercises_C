@@ -124,6 +124,8 @@ cat /opt/srv/logs/srv_important.log | grep -C 40 "$1" --color=auto</pre>
 Которые помогут вам избежать длинных названий файлов и команд:<br>
 Если вам часто нужно писать команды типа:<br>
 <details>
+    <summary>Спойлер</summary>
+
 kafkacat -C -b **gitlab-ci-sand-awesome.ru:9092** -t sand-confirmed -o beginning<br>
 kafkacat -C -b **test-gitlab-ci-node-awesome.ru:9092** -t test-confirmed -o beginning<br>
 kafkacat -C -b **pred-gitlab-ci-node-brilliant.ru:9092** -t pred-confirmed -o beginning<br>
@@ -132,11 +134,14 @@ kafkacat -C -b **prod-gitlab-ci-node-amazing.ru:9092** -t prod-confirmed -o begi
 /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server **15.83.178.212:9092** --group node-integrator --topic sand-node-response
 /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server **16.84.179.213:9092** --group node-integrator --topic test-node-response
 /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server **17.85.180.214:9092** --group node-integrator --topic pred-node-response
+
 </details>
 где нужны разные переменные, в зависимости от типа окружения/левой-ноги-заказчика/чего-бы-то-ни-было-ещё, то можно загнать их в alias или в переменные в своём .bashrc<br>
 *(bash run command - исполняемый файл, который содержит все сокращения, которыми мы так любим пользоваться.)*<br>
 Пример на аналогии:
 <details>
+    <summary>Спойлер</summary>
+
 любимая нами команда **ll** на самом деле в ~/.bashrc выглядит так:<br>
 **alias ll='ls -alF'**<br>
 а несколькими строчками выше ls зашифрована как:<br>
@@ -164,6 +169,8 @@ kafkacat -C -b **$prod** -t confirmed -o beginning<br>
 **cd /mnt/tmp/nfs/docs/2022-12-30** (день написания данной статьи).<br>
 Чтобы каждый раз не вбивать долго и муторно весь этот путь, вы можете вбить его в alias по такому примеру:<br>
 <details>
+    <summary>Спойлер</summary>
+
 **alias pn='cd /mnt/tmp/nfs/docs/'$(date +%F)' && ls -l'**<br>
 **&&** обозначает, что команда после этих символов исполнится только в случае успешного исполнения предыдущей части команды.<br>
 Можно заменить её на символ **";"**. Он обозначает, что сперва выполняется предыдущая часть команды, а затем, вне зависимости от результата, правая часть команды. (Но тогда, если переход не выполнится, то вы просто увидите содержимое текущей папки)<br>
@@ -179,6 +186,8 @@ kafkacat -C -b **$prod** -t confirmed -o beginning<br>
 **1. kubectl completion bash > kub.sh**<br>
 затем зайти в неё, видоизменить последние строки:<br>
 <details>
+    <summary>Спойлер</summary>
+
 
 ```
 if [[ $(type -t compopt) = "builtin" ]]; then
@@ -218,10 +227,13 @@ source ~/kub.sh
 Избежать этого можно с использованием опций крайне полезной команды **find**, например так:
 **find . -type f -exec grep "something" {} +**
 <details>
+    <summary>Спойлер</summary>
+
 Здесь **find .** обозначает, что нужно искать в текущей директории (вместо точки можно писать абсолютный путь)<br>
 **-type f** обозначает, что искать нужно только файлы (f - files)<br>
 **-exec grep "something"** - exec - execute - "выполнить" команду grep с любыми вашими опциями.<br>
 В конце обязательно **{} +** - оно означает, что все найденные командой find файлы будут по одному вставляться в фигурные скобки как аргументы для команды **grep** в нашем случае.
+
 </details>
 Соответственно в **grep** можно вписывать любые свои флаги, например **-l** - выводить только имена файлов без содержимого.<br>
 Если файлов настолько много, что даже такая команда будет выполняться чрезвычайно долго, но при этом вам известно время создания файла, вы можете использовать расширенные флаги команды **find**, например, следующая команда:<br>
@@ -233,6 +245,8 @@ source ~/kub.sh
 
 В качестве маленького бонуса - пример синтеза лучших качеств от GUI и CLI:
 <details>
+    <summary>Спойлер</summary>
+
 На примере программы flameshot в Ubuntu:<br>
 сперва установите её командой:
 <pre><code class="shell">
@@ -262,4 +276,5 @@ which flameshot
 Всё, теперь осталось только кликнуть на **set shortcut** и нажать на кнопку PrintScreen, чтобы она установилась, как вызывающая введённую выше команду.
 
 Это хороший пример объединения лучших качеств GUI и CLI.
+
 </details>
