@@ -150,6 +150,7 @@ kafkacat -C -b **prod-gitlab-ci-node-amazing.ru:9092** -t prod-confirmed -o begi
 **ls -alF --color=auto** подсвечивая разными цветами разные типы файлов ради вашего удобства.
 
 </details>
+
 Возвращаясь к нашему примеру, мы можем создать следующие переменные, дописав их, к примеру, в конец своего .bashrc:<br>
 **export sand='gitlab-ci-sand-awesome.ru:9092'**<br>
 **export test='test-gitlab-ci-node-awesome.ru:9092'**<br>
@@ -227,7 +228,7 @@ source ~/kub.sh
 Иногда у нас в одной директории находится очень много файлов и прошерстить их все и сразу командой типа **grep "something" ./**\* не представляется возможным.<br>
 В такие моменты баш пишет вам что-то вроде:<br>
 <pre>bash: /usr/bin/grep: Argument list too long</pre>
-Избежать этого можно с использованием опций крайне полезной команды **find**, например так:
+Избежать этого можно с использованием опций крайне полезной команды **find**, например так:<br>
 **find . -type f -exec grep "something" {} +**
 <details>
     <summary>Спойлер</summary>
