@@ -25,7 +25,7 @@ CLI - (Command-line interface) - интерфейс командной стро�
 Позволю напомнить себе древнуюю истину:<br>
 *"Хороший системный администратор - это ленивый системный администратор".*
 
-Тезис:<br>
+**Тезис:**<br>
 Большинство операций, которые выполняются с помощью мыши, могут быть сделаны без неё, быстрее и проще, а иногда их и вовсе можно автоматизировать.
 Вы работаете на Линукс, которая изначально затачивалась на чистую работу с консолью, а значит вы можете значительно ускорить свою работу, просто запомнив и начав применять некоторые трюки по работе с CLI.
 
@@ -131,11 +131,11 @@ cat /opt/srv/logs/srv_important.log | grep -C 40 "$1" --color=auto</pre>
 kafkacat -C -b **gitlab-ci-sand-awesome.ru:9092** -t sand-confirmed -o beginning<br>
 kafkacat -C -b **test-gitlab-ci-node-awesome.ru:9092** -t test-confirmed -o beginning<br>
 kafkacat -C -b **pred-gitlab-ci-node-brilliant.ru:9092** -t pred-confirmed -o beginning<br>
-kafkacat -C -b **prod-gitlab-ci-node-amazing.ru:9092** -t prod-confirmed -o beginning
-или
-/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server **15.83.178.212:9092** --group node-integrator --topic sand-node-response
-/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server **16.84.179.213:9092** --group node-integrator --topic test-node-response
-/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server **17.85.180.214:9092** --group node-integrator --topic pred-node-response
+kafkacat -C -b **prod-gitlab-ci-node-amazing.ru:9092** -t prod-confirmed -o beginning<br>
+или<br>
+/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server **15.83.178.212:9092** --group node-integrator --topic sand-node-response<br>
+/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server **16.84.179.213:9092** --group node-integrator --topic test-node-response<br>
+/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server **17.85.180.214:9092** --group node-integrator --topic pred-node-response<br>
 
 </details>
 
