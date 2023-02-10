@@ -176,6 +176,7 @@ kafkacat -C -b **$prod** -t confirmed -o beginning<br>
 **1. kubectl completion bash > kub.sh**<br>
 затем зайти в неё, видоизменить последние строки:<br>
 <details>
+
 ```
 if [[ $(type -t compopt) = "builtin" ]]; then
     complete -o default -F __start_kubectl kubectl
@@ -184,6 +185,7 @@ else
 fi
 ```
 До следующего вида:
+
 ```
 alias k=kubectl
 
@@ -197,6 +199,7 @@ fi
 ```
 </details>
 **2. Вписать строку в своём ~/.bashrc:**
+
 ```
 source ~/kub.sh
 ```
